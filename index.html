@@ -24,48 +24,63 @@ Select ONE Additional Feature to Add
     <h1>Quiz About [Me]</h1>
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="animal-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+       What is my favorite Animal?
+        <select id="animal-answer">
+          <option value="animal1">Walrus</option>
+          <option value="animal2">Cat</option>
+          <option value="animal3">Dolphin</option>
+          <option value="animal4">Gecko</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="animal-result"><p class="animal-text">
+      
+      </p><img class="animal-pic"></div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+         What is my favorite book?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">The Secret History</option>
+          <option value="book2">Of Mice and Men</option>
+          <option value="book3">The Goldfinch</option>
+          <option value="book4">Twilight</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
     <div id="book-result"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      
+      //Animal Question jQuery Code
+      $("#animal-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#animal-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
-        } else {
-          $("#movie-result").text("Try Again!");
-        }
+        
+        if (answer === "animal1") {
+           $(".animal-pic").attr("src", "https://pngimg.com/d/walrus_PNG3.png");
+          $(".animal-text").text("YESSSS!");
+        } 
+       if (answer === "animal2") {
+         $(".animal-pic").attr("src", "https://tr.rbxcdn.com/180DAY-0bb9f5cd0ae7994495c46eb03494adc4/420/420/Hat/Webp/noFilter");
+          $(".animal-text").text("huh?");
+        } 
+         if (answer === "animal3") {
+         $(".animal-pic").attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdtJVE8ITssY_fVNaVDDAFiHaRAnrv3kx424BKoMGIbrev3kG08uMMPLwGSpgNv9zUv3s&usqp=CAU");
+           $(".animal-text").text("");
+        } 
+        if (answer === "animal4") {
+          $(".animal-pic").attr("src", "https://pngimg.com/d/gecko_PNG12.png");
+          $(".animal-text").text("Gecko is disapointed that you could be so wrong.");
+        } 
       });
 
       //Book Question jQuery Code
@@ -75,10 +90,17 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
+        if (answer === "book3") {
           $("#book-result").text("YESSSS!");
-        } else {
-          $("#book-result").text("Try Again!");
+        } 
+         if (answer === "book4") {
+          $("#book-result").text("🤨");
+        }
+        if (answer === "book1") {
+          $("#book-result").text("Close but nope.");
+        }
+        if (answer === "book2") {
+          $("#book-result").text("Close but nope.");
         }
       });
     </script>
